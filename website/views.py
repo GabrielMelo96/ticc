@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as login_user
 from django.contrib.auth import logout as logout_user
+from django.http import HttpResponse
+import json
 
 from .models import *
 from .forms import *
@@ -323,4 +325,19 @@ def pontuacao_atualizar(request, pkJogo):
 		]
 	}
 
-	return render(request, 'pontuacao-atualizar.html', context)	
+	return render(request, 'pontuacao-atualizar.html', context)
+
+def create_graph_competicao(request):
+	data = [
+		{'campus': 2, 'name':'Belo Horizonte', 'participantes': 1},
+        {'campus': 3, 'name':'Leopoldina', 'participantes': 1},
+        {'campus': 4, 'name':'Araxá', 'participantes': 1},
+        {'campus': 5, 'name':'Divinópolis', 'participantes': 1},
+        {'campus': 7, 'name':'Timóteo', 'participantes': 1},
+        {'campus': 8, 'name':'Varginha', 'participantes': 1},
+        {'campus': 9, 'name':'Nepomuceno', 'participantes': 1},
+        {'campus': 10, 'name':'Curvelo', 'participantes': 1},
+        {'campus': 11, 'name':'Contagem', 'participantes': 1}
+	]
+	return HttpResponse(json.dumps(data), content_type = "application/json")
+

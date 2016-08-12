@@ -14,6 +14,7 @@ urlpatterns = [
 	url(r'competicoes/novo/(?P<pkTorneio>[0-9]+)$', views.competicoes_novo),
 	url(r'competicoes/(?P<pkCompeticao>[0-9]+)$', views.competicoes_detalhes),
 	url(r'competicoes/editar/(?P<pkCompeticao>[0-9]+)$', views.competicoes_editar),
+	url(r'competicoes/graph$', views.create_graph_competicao),
 	
 	url(r'jogos/(?P<pkJogo>[0-9]+)$', views.jogos_detalhes),
 	url(r'jogos/novo/(?P<pkCompeticao>[0-9]+)$', views.jogos_novo),

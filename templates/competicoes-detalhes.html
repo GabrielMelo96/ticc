@@ -1,6 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-	{% include "competicoes-intercampi.html" %}
-	{% include "competicoes-seletivas.html" %}
+
+	<div class="row">
+		<div class="col-md-6">
+			{% include "competicoes-intercampi.html" %}
+			{% include "competicoes-seletivas.html" %}
+		</div>
+		<div class="col-md-6">
+			{% include "competicoes-grafico.html" %}
+		</div>
+	</div>
+
 {% endblock content %}
+
+{% block js %}
+<script src="/static/dist/js/grafico-seletiva.js"></script>
+{% endblock js %}
+
